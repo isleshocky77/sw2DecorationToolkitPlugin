@@ -9,7 +9,7 @@ function addStylesheet(sfPHPView $view) {
   extract($view->getAttributeHolder()->toArray());
   # We now have all the template variables
 
-  $sf_context->getResponse()->addStylesheet('/sw2UtilityPlugin/css/admin.css');
+  $sf_context->getResponse()->addStylesheet('/sw2DecorationToolkitPlugin/css/admin.css');
 }
 
 /**
