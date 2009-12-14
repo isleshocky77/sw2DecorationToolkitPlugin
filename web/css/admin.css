@@ -1,0 +1,151 @@
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input
+  {
+  margin: 0;
+  padding: 0;
+}
+
+a img,:link img,:visited img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+  background-color: #fff;
+}
+
+body {
+  padding: 20px;
+}
+
+h2 { font-size: 1.5em; font-weight: bold; }
+
+/* horizontal */
+#sf_admin_nav.horizontal {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#sf_admin_nav.horizontal ul {
+  margin: 0;
+  padding: 0 5px 0 0;
+  list-style: none;
+  height: 20px;
+  width: 100%;
+  border: 1px solid #DDD;
+  cursor: pointer;
+}
+#sf_admin_nav.horizontal ul li {
+  list-style-type: none;
+}
+
+#sf_admin_nav.horizontal h1 {
+  font-size: 14px;
+  font-weight: bold;
+  height: 20px;
+  margin: 0;
+  padding: 5px 0 0 5px;
+  width: 100%;
+  background: #CCCCFF;
+  border: 1px solid #CCCCFF;
+}
+
+#sf_admin_nav.horizontal a {
+  display: block;
+}
+
+#sf_admin_nav.horizontal li {
+  float: left;
+  height: 16px;
+  border: 1px solid #DDD;
+  padding: 2px 5px 0 5px;
+  background: #EEF;
+}
+
+#sf_admin_nav.horizontal li ul li {
+  float: none;
+}
+
+#sf_admin_nav.horizontal li ul {
+  position: absolute;
+  left: -999em;
+  width: auto;
+  border: none;
+  margin-top: 2px;
+}
+
+#sf_admin_nav.horizontal li:hover ul {
+  left: auto;
+}
+
+#sf_admin_nav.horizontal ul a {
+  color: #00A;
+}
+
+/* vertical */
+#sf_admin_nav.vertical {
+  margin: 0 20px 0 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  font-size: 12px;
+  float: left;
+}
+
+#sf_admin_nav.vertical h1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 5px 0 0;
+  padding: 5px 0 0 5px;
+  width: 100%;
+  background: #CCCCFF;
+  border: 1px solid #CCCCFF;
+  border-right: none;
+}
+
+#sf_admin_nav.vertical ul {
+  margin: 0;
+  padding: 2px;
+  list-style: none;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #EEF;
+}
+
+#sf_admin_nav.vertical a {
+  display: block;
+}
+
+#sf_admin_nav.vertical li {
+  padding: 0 0 0 3px;
+  margin: 0;
+}
+
+#sf_admin_nav.vertical li ul li {
+  border: none;
+  text-align: left;
+  font-weight: normal;
+  padding: 2px 0 0 3px;
+}
+
+#sf_admin_nav.vertical li ul {
+  width: auto;
+  margin: 0 3px 0 0;
+  padding: 0 0 10px 0;
+  border: none;
+}
+
+#sf_admin_nav.vertical ul a {
+  color: #00A;
+}
+

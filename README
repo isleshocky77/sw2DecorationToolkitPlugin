@@ -1,0 +1,89 @@
+# sw2UtilityPlugin #
+
+This contains some frequently used helps, libraries, and images used for most projects
+
+## Libraries ##
+
+### sw2Debug class ###
+This class contains a static method to output a variable
+
+    [php]
+    sw2Debug::p($variable, "I'm dead", true); // Will echo the var_dump of $variable and die() afterwards with "I'm Dead"
+
+### Validators ###
+
+ * sw2PhoneValidator (sf1.0)
+
+
+## Helpers ##
+
+### sw2AdminLayout ###
+This contains the functionality to output a full admin panel layout with drop down menu
+
+#### Menu Array ####
+First make the menu array in your app.yml file for the correct app
+
+__Example__ */apps/admin/config/app.yml*
+
+    [yaml]
+    all:
+      sw2AdminLayout:
+        menu:
+          Admin:
+            Home: '@homepage'
+            Logout: '@sf_guard_signout'
+          Persons: person/index
+          Settings:
+            Capabilities: capability/index
+            Settings: '@sf_settings'
+          Work:
+            Works: work/index
+            Clients: client/index
+          Security:
+            Users: '@sf_guard_user'
+            Groups: '@sf_guard_group'
+
+Then update the layout.php for the correct app
+
+__Example__ */apps/admin/templates/layout.php*
+
+    [php]
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+
+    <?php include_http_metas() ?>
+    <?php include_metas() ?>
+
+    <?php include_title() ?>
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <?php use_helper('sw2AdminLayout', 'sw2LayoutControl'); ?>
+    <body<?php echo get_body_class($this, '') ?>>
+    <h2>Studio Admin Panel - The Site</h2>
+    <?php echo getAdminPage($this, $sf_data->getRaw('sf_content')) ?>
+
+    </body>
+    </html>
+
+
+
+### sw2LayoutControl ###
+This contains functionality for outputting the correct body class.
+
+    [php]
+    # To use helper
+    <?php use_helper('sw2LayoutControl'); ?>
+
+    # /apps/frontend/public/templates/layout.php
+    <body<?php echo get_body_class($this, 'parent_class') ?>>
+
+    # /apps/frontend/public/modules/home/templates/indexSuccess.php
+    <?php add_body_class('home_class'); />
+
+## Images ##
+In /web/images/icons is the entire [FamFamFam Silk Icon][famfamfam] set
+
+[famfamfam]: http://www.famfamfam.com/lab/icons/silk/ "Silk Icons"
