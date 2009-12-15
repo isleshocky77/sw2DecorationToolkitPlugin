@@ -1,6 +1,6 @@
-# sw2UtilityPlugin #
+# sw2DecorationToolkitPlugin #
 
-This contains some frequently used helps, libraries, and images used for most projects
+This contains some frequently used helpers, libraries, and images used for most projects
 
 ## Libraries ##
 
@@ -9,11 +9,6 @@ This class contains a static method to output a variable
 
     [php]
     sw2Debug::p($variable, "I'm dead", true); // Will echo the var_dump of $variable and die() afterwards with "I'm Dead"
-
-### Validators ###
-
- * sw2PhoneValidator (sf1.0)
-
 
 ## Helpers ##
 
@@ -48,26 +43,26 @@ Then update the layout.php for the correct app
 __Example__ */apps/admin/templates/layout.php*
 
     [php]
+    <?php use_helper('sw2AdminLayout', 'sw2LayoutControl') ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
+      <?php include_http_metas() ?>
+      <?php include_metas() ?>
 
-    <?php include_http_metas() ?>
-    <?php include_metas() ?>
+      <?php include_title() ?>
 
-    <?php include_title() ?>
-
-    <link rel="shortcut icon" href="/favicon.ico" />
-
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <?php include_stylesheets() ?>
+      <?php include_javascripts() ?>
     </head>
-    <?php use_helper('sw2AdminLayout', 'sw2LayoutControl'); ?>
     <body<?php echo get_body_class($this, '') ?>>
-    <h2>Studio Admin Panel - The Site</h2>
-    <?php echo getAdminPage($this, $sf_data->getRaw('sf_content')) ?>
-
+    <h2>Admin Panel - STUDIO llc</h2>
+    <?php echo getAdminPage($sf_data->getRaw('sf_content')) ?>
     </body>
     </html>
 
+![Admin Panel Menu](http://svn.symfony-project.org/plugins/sw2DecorationToolkitPlugin/docs/2.0/images/s2AdminLayout_Screenshot.png "Screenshot of the Admin Menu in Action")
 
 
 ### sw2LayoutControl ###
@@ -82,8 +77,15 @@ This contains functionality for outputting the correct body class.
 
     # /apps/frontend/public/modules/home/templates/indexSuccess.php
     <?php add_body_class('home_class'); />
+    
+    # Outputs the following html
+    <body class=".home .index .home_class">
 
 ## Images ##
 In /web/images/icons is the entire [FamFamFam Silk Icon][famfamfam] set
 
+    [php]
+    <img src="<?php echo image_path('/sw2DecorationToolkitPlugin/images/icons/wrench.png') ?>" alt="Wrench" />
+
 [famfamfam]: http://www.famfamfam.com/lab/icons/silk/ "Silk Icons"
+
