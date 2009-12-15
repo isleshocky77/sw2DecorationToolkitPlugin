@@ -1,0 +1,12 @@
+Version 2.0.0
+--------------
+ * [25375]:
+   * Updating the README file for updates made in this version
+   * Removing the validator which shouldn't be part of this plugin
+ * [25373] Updated the helper to need need to be passed the phpView and to automatically add the stylesheet when loaded
+
+Version 1.0.0
+--------------
+ * [25361] Updating the name of plugin for css sheets
+ * [25355] Doing the initial imports from our local code repositories. README, LICENSE, and testing to come.
+

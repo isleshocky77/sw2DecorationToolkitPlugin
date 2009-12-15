@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-  <name>sw2Utility2Plugin</name>
+  <name>sw2DecorationToolkitPlugin</name>
   <channel>pear.symfony-project.com</channel>
   <summary>##SUMMARY##</summary>
   <description>##SUMMARY##</description>
@@ -36,11 +36,30 @@
         <name>symfony</name>
         <channel>pear.symfony-project.com</channel>
         <min>1.2.0</min>
-        <max>1.3.0</max>
-        <exclude>1.3.0</exclude>
+        <max>1.5.0</max>
+        <exclude>1.5.0</exclude>
       </package>
     </required>
   </dependencies>
   <phprelease></phprelease>
-  <changelog></changelog>
+  <changelog>
+    <release>
+     <version>
+      <release>2.0.0</release>
+      <api>2.0.0</api>
+     </version>
+     <stability>
+      <release>beta</release>
+      <api>beta</api>
+     </stability>
+     <date>2009-12-14</date>
+     <license uri="http://svn.symfony-project.com/plugins/sw2DecorationToolkitPlugin/branches/1.2/LICENSE">MIT license</license>
+     <notes> * [25375]:
+   * Updating the README file for updates made in this version
+   * Removing the validator which shouldn't be part of this plugin
+ * [25373] Updated the helper to need need to be passed the phpView and to automatically add the stylesheet when loaded
+     </notes>
+    </release>
+  </changelog>
 </package>
+
