@@ -1,14 +1,17 @@
 <?php
 
-function addStylesheet(sfPHPView $view) {
+/**
+ * We must add the stylesheets when the helper is loaded so it added before the
+ * displaying of stylesheets
+ */
+addStylesheet();
 
-  /**
-   * Taken from
-   * SVN: $Id: sfPHPView.class.php 11783 2008-09-25 16:21:27Z fabien $
-   */
-  extract($view->getAttributeHolder()->toArray());
-  # We now have all the template variables
+/**
+ * Adds the stylesheet needed for this helper to the response
+ */
+function addStylesheet() {
 
+  $sf_context = sfContext::getInstance();
   $sf_context->getResponse()->addStylesheet('/sw2DecorationToolkitPlugin/css/admin.css');
 }
 
@@ -19,18 +22,10 @@ function addStylesheet(sfPHPView $view) {
  * @param string $page_data
  * @param string $menu_style Should be horizontal or vertical
  */
-function getAdminPage(sfPHPView $view, $page_data, $menu_style='horizontal') {
+function getAdminPage($page_data, $menu_style='horizontal') {
 
-
-  /**
-   * Taken from
-   * SVN: $Id: sfPHPView.class.php 11783 2008-09-25 16:21:27Z fabien $
-   */
-  extract($view->getAttributeHolder()->toArray());
-  # We now have all the template variables
-
-  # Add stylesheet
-  $sf_context->getResponse()->addStylesheet('/sw2UtilityPlugin/css/admin.css');
+  $sf_context = sfContext::getInstance();
+  $sf_user = $sf_context->getUser();
 
   # Build Menu
   $menu_data = '';
