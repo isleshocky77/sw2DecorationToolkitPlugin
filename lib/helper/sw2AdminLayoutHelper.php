@@ -12,7 +12,7 @@ addStylesheet();
 function addStylesheet() {
 
   $sf_context = sfContext::getInstance();
-  $sf_context->getResponse()->addStylesheet('/sw2DecorationToolkitPlugin/css/admin.css');
+  $sf_context->getResponse()->addStylesheet('/sw2DecorationToolkitPlugin/css/admin.css', sfWebResponse::FIRST);
 }
 
 /**
