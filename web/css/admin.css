@@ -82,6 +82,7 @@ h2 { font-size: 1.5em; font-weight: bold; }
   width: auto;
   border: none;
   margin-top: 2px;
+  z-index: 1000;
 }
 
 #sf_admin_nav.horizontal li:hover ul {
