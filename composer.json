@@ -1,0 +1,26 @@
+{
+    "name": "sw2/sw2DecorationToolkitPlugin"
+    "type": "symfony1-plugin",
+    "description": "This contains some frequently used helpers, libraries, and images used for most projects.",
+    "keywords": [ "symfony", "layout", "menu", "debug" ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephen Ostrow",
+            "email": "stephen@whoisstudio.com",
+            "homepage": "http://whoisstudio.com",
+            "role": "developer"
+        },
+        {
+            "name": "Mike Dawidowicz",
+            "email": "mike@whoisstudio.com",
+            "homepage": "http://whoisstudio.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "composer/installers": "dev-master",
+        "symfony/symfony1": "1.4.*"
+    }
+}
