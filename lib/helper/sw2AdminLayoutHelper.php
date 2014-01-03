@@ -52,10 +52,15 @@ function Get_Array_Keys_UL($array = array()) {
     return '';
   $out = '<ul>' . "\n";
   foreach($array as $key => $elem)
-    if(is_array($elem)) {
+    if(is_array($elem) && !isset($elem['href'])) {
       $out .= '<li>' . $key . $recursion($elem) . '</li>' . "\n";
     }
-    else {
+    elseif(is_array($elem)) {
+      $href = $elem['href'];
+      $options = $elem;
+      unset($options['href']);
+      $out .= '<li>' . link_to($key, $href, $options) . '</li>';
+    } else {
       $out .= '<li>' . link_to($key, $elem) . '</li>';
     }
   $out .= '</ul>' . "\n";
