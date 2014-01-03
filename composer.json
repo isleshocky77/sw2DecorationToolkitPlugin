@@ -1,5 +1,5 @@
 {
-    "name": "sw2/sw2DecorationToolkitPlugin"
+    "name": "sw2/sw2DecorationToolkitPlugin",
     "type": "symfony1-plugin",
     "description": "This contains some frequently used helpers, libraries, and images used for most projects.",
     "keywords": [ "symfony", "layout", "menu", "debug" ],
