@@ -37,6 +37,22 @@ __Example__ */apps/admin/config/app.yml*
           Security:
             Users: '@sf_guard_user'
             Groups: '@sf_guard_group'
+          # Above are simple examples. Below will be advanced.
+          'Admin Advanced':
+            Home:
+              'href': '@homepage'
+              'id':   'home_link'
+            Logout:
+              'href': '@sf_guard_signout'
+              'id':   'logout_link'
+          'Mental':
+            _permission: 'Mental Admin Menu'
+            _children:
+              Builder:  '@mental_builder'
+              Category: '@mental_category'
+              Circuit:  '@mental_circuit'
+              Exercise: '@mental_exercise'
+              Program:  '@mental_program'
 
 Then update the layout.php for the correct app
 
@@ -77,7 +93,7 @@ This contains functionality for outputting the correct body class.
 
     # /apps/frontend/public/modules/home/templates/indexSuccess.php
     <?php add_body_class('home_class'); />
-    
+
     # Outputs the following html
     <body class=".home .index .home_class">
 

@@ -47,18 +47,34 @@ LAYOUT;
 }
 
 function Get_Array_Keys_UL($array = array()) {
+
+  $sf_context = sfContext::getInstance();
+  $sf_user = $sf_context->getUser();
+
   $recursion = __FUNCTION__;
   if(empty($array))
     return '';
   $out = '<ul>' . "\n";
   foreach($array as $key => $elem)
+
     if(is_array($elem) && !isset($elem['href'])) {
-      $out .= '<li>' . $key . $recursion($elem) . '</li>' . "\n";
+      if(isset($elem['_permission'])) {
+        if($sf_user->hasCredential($elem['_permission'])) {
+          $out .= '<li>' . $key . $recursion($elem['_children']) . '</li>' . "\n";
+        }
+      } else {
+        $out .= '<li>' . $key . $recursion($elem) . '</li>' . "\n";
+      }
     }
+    elseif(substr($key,0,1) =='_') {}
     elseif(is_array($elem)) {
       $href = $elem['href'];
       $options = $elem;
       unset($options['href']);
+      if(isset($elem['_permission']) && !$sf_user->hasCredential($elem['_permission'])) {
+       continue;
+      }
+      unset($options['_permission']);
       $out .= '<li>' . link_to($key, $href, $options) . '</li>';
     } else {
       $out .= '<li>' . link_to($key, $elem) . '</li>';
